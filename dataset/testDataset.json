@@ -1,18 +1,18 @@
 {
-	"name": "OutputDataset",
+	"name": "testDataset",
 	"properties": {
-		"description": "Demo. test",
+		"description": "Demo",
 		"linkedServiceName": {
 			"referenceName": "AzureStorageLinkedService",
 			"type": "LinkedServiceReference"
 		},
 		"type": "AzureBlob",
 		"typeProperties": {
-			"fileName": {
-				"value": "@CONCAT(pipeline().RunId, '.txt')",
-				"type": "Expression"
+			"format": {
+				"type": "JsonFormat"
 			},
-			"folderPath": "adftutorial/output"
+			"fileName": "test_input.txt",
+			"folderPath": "adftutorial/input"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
