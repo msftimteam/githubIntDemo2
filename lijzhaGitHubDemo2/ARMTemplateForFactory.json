@@ -22,14 +22,6 @@
 		"OutputDataset_properties_typeProperties_folderPath": {
 			"type": "string",
 			"defaultValue": "adftutorial/output"
-		},
-		"testDataset_properties_typeProperties_fileName": {
-			"type": "string",
-			"defaultValue": "test_input.txt"
-		},
-		"testDataset_properties_typeProperties_folderPath": {
-			"type": "string",
-			"defaultValue": "adftutorial/input"
 		}
 	},
 	"variables": {
@@ -37,7 +29,7 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/CopyPipeline')]",
+			"name": "[concat(parameters('factoryName'), '/CopyPipelineDemo')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -126,29 +118,6 @@
 						"type": "Expression"
 					},
 					"folderPath": "[parameters('OutputDataset_properties_typeProperties_folderPath')]"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureStorageLinkedService')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/testDataset')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"description": "Demo",
-				"linkedServiceName": {
-					"referenceName": "AzureStorageLinkedService",
-					"type": "LinkedServiceReference"
-				},
-				"type": "AzureBlob",
-				"typeProperties": {
-					"format": {
-						"type": "JsonFormat"
-					},
-					"fileName": "[parameters('testDataset_properties_typeProperties_fileName')]",
-					"folderPath": "[parameters('testDataset_properties_typeProperties_folderPath')]"
 				}
 			},
 			"dependsOn": [
