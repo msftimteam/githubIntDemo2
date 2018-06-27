@@ -16,12 +16,6 @@
 		},
 		"OutputDataset_properties_typeProperties_folderPath": {
 			"value": "adftutorial/output"
-		},
-		"testDataset_properties_typeProperties_fileName": {
-			"value": "test_input.txt"
-		},
-		"testDataset_properties_typeProperties_folderPath": {
-			"value": "adftutorial/input"
 		}
 	}
 }
